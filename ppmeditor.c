@@ -19,7 +19,7 @@ int main()
 {
 	int i = 0;
 	int rows, columns, max_color_value, j = 1,avg_pixel,sum_pixel,red,green,blue;
-	char character[5],img_file[50], output_img_file[50], choice_1, choice_2, choice_3, choice_4, choice_5, choice_6, choice_7, choice_8,choice_9;
+	char character[5],img_file[50], output_img_file[50], choice_1, choice_2, choice_3, choice_4, choice_5, choice_6, choice_7, choice_8;
 	FILE *fp_img;                                                                                   // A file pointer pointing to the image that would be read.
 	FILE *fp_img_out;                                                                             // A file pointer pointing to the image that would be used to write after editing.
 
@@ -57,37 +57,37 @@ int main()
 	printf("\n");
 
 	printf("   Do you want [2]? (y/n) ");                                                        // Asking the user for converting the image to a negative of red.
-	scanf(" %c", &choice_3);
+	scanf(" %c", &choice_2);
 
 	printf("\n");
 
 	printf("   Do you want [3]? (y/n) ");                                                          // Asking the user for converting the image to a negative of green.
-	scanf(" %c", &choice_4);
+	scanf(" %c", &choice_3);
 
 	printf("\n");
 
 	printf("   Do you want [4]? (y/n) ");                                                       // Asking the user for converting the image to a negative of blue.
-	scanf(" %c", &choice_5);
+	scanf(" %c", &choice_4);
 
 	printf("\n");
 
 	printf("   Do you want [5]? (y/n) ");                                                           // Asking the user for converting the image to just the red pixels.
-	scanf(" %c", &choice_6);
+	scanf(" %c", &choice_5);
 
 	printf("\n");
 
 	printf("   Do you want [6]? (y/n) ");                                                         // Asking the user for converting the image to just the green pixels
-	scanf(" %c", &choice_7);
+	scanf(" %c", &choice_6);
 
 	printf("\n");
 
 	printf("   Do you want [7]? (y/n) ");                                                     // Asking the user for converting the image to just the blue pixels.
-	scanf(" %c", &choice_8);
+	scanf(" %c", &choice_7);
 
 	printf("\n");
 
 	printf("   Do you want [8]? (y/n) ");                                                          // Asking the user for converting the image to extreme contrast.
-	scanf(" %c", &choice_9);
+	scanf(" %c", &choice_8);
 
 	printf("\n\n");
 	if (fp_img == NULL)                                                                          // If the image is empty show a message and exit the program.
@@ -121,72 +121,49 @@ int main()
 				grey_scale(&red, &green, &blue);                                     // Calling function grey_scale.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_3 == 'y' || choice_3 == 'Y')                                   // If choice_3 is 'y' or 'Y'.
+			if (choice_2 == 'y' || choice_2 == 'Y')                                   // If choice_3 is 'y' or 'Y'.
 			{
 				negate_red(&red);                                                   // Calling function negate_red.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_4 == 'y' || choice_1 == 'Y')                                      // If choice_4 is 'y' or 'Y'.
+			if (choice_3 == 'y' || choice_3 == 'Y')                                      // If choice_4 is 'y' or 'Y'.
 			{
 				negate_green(&green);                                                       // Calling function negate_green.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_5 == 'y' || choice_5 == 'Y')                                            // If choice_5 is 'y' or 'Y'.
+			if (choice_4 == 'y' || choice_4 == 'Y')                                            // If choice_5 is 'y' or 'Y'.
 			{
 				negate_blue(&blue);                                                            // Calling function negate_blue.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_6 == 'y' || choice_6 == 'Y')                                                // If choice_6 is 'y' or 'Y'.
+
+			if (choice_5 == 'y' || choice_5 == 'Y')                                                // If choice_6 is 'y' or 'Y'.
 			{
 				flatten_red(&red);                                                                // Calling function flatten_red.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_7 == 'y' || choice_7 == 'Y')                                                 // If choice_7 is 'y' or 'Y'.
+			if (choice_6 == 'y' || choice_6 == 'Y')                                                 // If choice_7 is 'y' or 'Y'.
 			{
 				flatten_green(&green);                                                              // Calling function flatten_green.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_8 == 'y' || choice_8 == 'Y')                                                    // If choice_8 is 'y' or 'Y'.
+			if (choice_7 == 'y' || choice_7 == 'Y')                                                    // If choice_8 is 'y' or 'Y'.
 			{
 				flatten_blue(&blue);                                                                   // Calling function flatten_blue.
 			}
 
-			else {
-				;
-			}
 
-			if (choice_9 == 'y' || choice_9 == 'Y')                                                    // If choice_9 is 'y' or 'Y'.
+			if (choice_8 == 'y' || choice_8 == 'Y')                                                    // If choice_9 is 'y' or 'Y'.
 			{
 				extreme_contrast(&red, &green, &blue);                                                // Calling function extreme_contrast.
 			}
 
-			else {
-				;
-			}
 
 			fprintf(fp_img_out, "    %d %d %d    ", red, green, blue);                                  // Writing red, green, blue pixels of the image with editing.
 
